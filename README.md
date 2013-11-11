@@ -34,29 +34,9 @@ private string ScanBarcode()
 {
     if (reader == null)
         reader = new ReaderFactory().GetReader()
+    reader.Scanned += OnScan;
     reader.Open();
-    reader.Scanned += OnScan;
     reader.Scan();
-}
-
-private void OnScan(object sender, ScannedDataEventArgs e)
-{
-    reader.Scanned += OnScan;
-    MessageBox.Show(e.Data[0]);
-}
-```
-
-This example shows how you might use this interface through the **BarcodeReader**
-```c#
-private BarcodeReader reader;
-
-private string ScanBarcode()
-{
-    if (reader == null)
-        reader = new BarcodeReader();
-    reader.Scanner.Scanned += OnScan;
-    reader.Scanner.Open();
-    reader.Scanner.Scan();
 }
 
 private void OnScan(object sender, ScannedDataEventArgs e)
@@ -72,6 +52,26 @@ private string ScanBarcode()
     BarcodeScannerFacade.Instance.Scanned += OnScan;
     BarcodeScannerFacade.Instance.Open();
     BarcodeScannerFacade.Instance.Scan();
+}
+
+private void OnScan(object sender, ScannedDataEventArgs e)
+{
+    MessageBox.Show(e.Data[0]);
+}
+```
+
+This example shows how you might use this interface through the **BarcodeReader**. 
+**This is not the recommended usage, and is marked as [Obsolete]
+```c#
+private BarcodeReader reader;
+
+private string ScanBarcode()
+{
+    if (reader == null)
+        reader = new BarcodeReader();
+    reader.Scanner.Scanned += OnScan;
+    reader.Scanner.Open();
+    reader.Scanner.Scan();
 }
 
 private void OnScan(object sender, ScannedDataEventArgs e)
