@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarcodeScannerFactory", "BarcodeScannerFactory\BarcodeScannerFactory.csproj", "{81328556-A1F8-4D5C-B115-8F64CAC28DB4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{857800A5-6203-41EA-8362-7F6A4765D150}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Casio", "Casio", "{E91ED284-2C00-4BD4-A789-4B9A284C5B26}"
+	ProjectSection(SolutionItems) = preProject
+		..\Dependencies\Casio\OBReadLibNet.dll = ..\Dependencies\Casio\OBReadLibNet.dll
+		..\Dependencies\Casio\SystemLibnet.dll = ..\Dependencies\Casio\SystemLibnet.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Intermec", "Intermec", "{E5AD0E33-CFE7-462D-A02B-F7FB0854B361}"
+	ProjectSection(SolutionItems) = preProject
+		..\Dependencies\Intermec\Intermec.DataCollection.CF2.dll = ..\Dependencies\Intermec\Intermec.DataCollection.CF2.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Symbol", "Symbol", "{B6352D44-485D-4DFA-9F68-19DCBD9559B6}"
+	ProjectSection(SolutionItems) = preProject
+		..\Dependencies\Symbol\Symbol.Barcode.dll = ..\Dependencies\Symbol\Symbol.Barcode.dll
+		..\Dependencies\Symbol\Symbol.Barcode.xml = ..\Dependencies\Symbol\Symbol.Barcode.xml
+		..\Dependencies\Symbol\Symbol.dll = ..\Dependencies\Symbol\Symbol.dll
+		..\Dependencies\Symbol\Symbol.INI = ..\Dependencies\Symbol\Symbol.INI
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81328556-A1F8-4D5C-B115-8F64CAC28DB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81328556-A1F8-4D5C-B115-8F64CAC28DB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81328556-A1F8-4D5C-B115-8F64CAC28DB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81328556-A1F8-4D5C-B115-8F64CAC28DB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E91ED284-2C00-4BD4-A789-4B9A284C5B26} = {857800A5-6203-41EA-8362-7F6A4765D150}
+		{E5AD0E33-CFE7-462D-A02B-F7FB0854B361} = {857800A5-6203-41EA-8362-7F6A4765D150}
+		{B6352D44-485D-4DFA-9F68-19DCBD9559B6} = {857800A5-6203-41EA-8362-7F6A4765D150}
+	EndGlobalSection
+EndGlobal
