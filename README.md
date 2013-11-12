@@ -41,7 +41,7 @@ private string ScanBarcode()
 
 private void OnScan(object sender, ScannedDataEventArgs e)
 {
-    MessageBox.Show(e.Data[0]);
+    MessageBox.Show(e.Data[0].Text);
 }
 ```
 
@@ -56,12 +56,12 @@ private string ScanBarcode()
 
 private void OnScan(object sender, ScannedDataEventArgs e)
 {
-    MessageBox.Show(e.Data[0]);
+    MessageBox.Show(e.Data[0].Text);
 }
 ```
 
 This example shows how you might use this interface through the **BarcodeReader**. 
-**This is not the recommended usage, and is marked as [Obsolete]
+This is not the recommended usage, and is marked as [Obsolete]
 ```c#
 private BarcodeReader reader;
 
@@ -76,6 +76,6 @@ private string ScanBarcode()
 
 private void OnScan(object sender, ScannedDataEventArgs e)
 {
-    MessageBox.Show(e.Data[0]);
+    MessageBox.Show(e.Data[0].Text);
 }
 ```
