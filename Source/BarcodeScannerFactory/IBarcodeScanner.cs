@@ -34,29 +34,7 @@ namespace ChristianHelle.Barcode
     /// private void OnScan(object sender, ScannedDataEventArgs e)
     /// {
     ///     reader.Scanned += OnScan;
-    ///     MessageBox.Show(e.Data[0]);
-    /// }
-    /// </code>
-    /// </example>
-    /// <example>
-    /// This example shows how you might use this interface through the BarcodeReader
-    /// 
-    /// <code>
-    /// private BarcodeReader reader;
-    /// 
-    /// private string ScanBarcode()
-    /// {
-    ///     if (reader == null)
-    ///         reader = new BarcodeReader();
-    ///     reader.Scanner.Open();
-    ///     reader.Scanner.Scanned += OnScan;
-    ///     reader.Scanner.Scan();
-    /// }
-    /// 
-    /// private void OnScan(object sender, ScannedDataEventArgs e)
-    /// {
-    ///     reader.Scanner.Scanned += OnScan;
-    ///     MessageBox.Show(e.Data[0]);
+    ///     MessageBox.Show(e.Data[0].Text);
     /// }
     /// </code>
     /// </example>
@@ -74,7 +52,30 @@ namespace ChristianHelle.Barcode
     /// private void OnScan(object sender, ScannedDataEventArgs e)
     /// {
     ///     BarcodeScannerFacade.Instance.Scanned += OnScan;
-    ///     MessageBox.Show(e.Data[0]);
+    ///     MessageBox.Show(e.Data[0].Text);
+    /// }
+    /// </code>
+    /// </example>
+    /// <example>
+    /// This example shows how you might use this interface through the BarcodeReader. 
+    /// This is not the recommended usage, and is marked as [Obsolete]
+    /// 
+    /// <code>
+    /// private BarcodeReader reader;
+    /// 
+    /// private string ScanBarcode()
+    /// {
+    ///     if (reader == null)
+    ///         reader = new BarcodeReader();
+    ///     reader.Scanner.Open();
+    ///     reader.Scanner.Scanned += OnScan;
+    ///     reader.Scanner.Scan();
+    /// }
+    /// 
+    /// private void OnScan(object sender, ScannedDataEventArgs e)
+    /// {
+    ///     reader.Scanner.Scanned += OnScan;
+    ///     MessageBox.Show(e.Data[0].Text);
     /// }
     /// </code>
     /// </example>
