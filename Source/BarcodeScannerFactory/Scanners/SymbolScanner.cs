@@ -1,4 +1,29 @@
-﻿using System;
+﻿#region License
+
+// The MIT License (MIT)
+// 
+// Copyright (c) 2013 Christian Resma Helle
+// 
+// Permission is hereby granted, free of charge, to any person obtaining a copy of
+// this software and associated documentation files (the "Software"), to deal in
+// the Software without restriction, including without limitation the rights to
+// use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+// the Software, and to permit persons to whom the Software is furnished to do so,
+// subject to the following conditions:
+// 
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+// FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+// COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+// IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+#endregion
+
+using System;
 using System.Threading;
 using Symbol;
 using Symbol.Barcode;
@@ -186,11 +211,11 @@ namespace ChristianHelle.Barcode.Scanners
             if (Scanned != null)
             {
                 var barcodeData = new BarcodeData
-                    {
-                        Text = data.Text,
-                        BarcodeType = (BarcodeTypes) data.Type
-                    };
-                Scanned.Invoke(this, new ScannedDataEventArgs(new[] { barcodeData }));
+                                  {
+                                      Text = data.Text,
+                                      BarcodeType = (BarcodeTypes) data.Type
+                                  };
+                Scanned.Invoke(this, new ScannedDataEventArgs(new[] {barcodeData}));
             }
 
             scannerStatus = ScannerStatus.Opened;
@@ -198,7 +223,7 @@ namespace ChristianHelle.Barcode.Scanners
 
         private void TimeoutCallback(object state)
         {
-            var instance = (SymbolScanner)state;
+            var instance = (SymbolScanner) state;
             instance.reader.Info.SoftTrigger = false;
             instance.scannerStatus = ScannerStatus.Opened;
             timeout.Dispose();
